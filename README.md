@@ -26,8 +26,8 @@ Este repositorio implementa un sistema básico de **registro e inicio de sesión
 
 1. **Clona el repositorio**
    ```bash
-   git clone https://github.com/tu-usuario/mi-repo-autenticacion.git
-   cd mi-repo-autenticacion
+   git clone https://github.com/iSehii/dietasBackend.git
+   cd dietasBackend
    ```
 
 2. **Instala las dependencias**
@@ -47,11 +47,11 @@ Este repositorio implementa un sistema básico de **registro e inicio de sesión
 
 4. **Configura tu base de datos MySQL**
 
-   Asegúrate de tener una base de datos creada y con las tablas necesarias. Puedes usar el archivo SQL incluido (`viajes.sql`).
+   Sequelize gestiona las tablas y las consultas
 
 5. **Ejecuta el proyecto**
    ```bash
-   npm run dev
+   npm start
    ```
 
    Esto iniciará tu servidor en modo desarrollo con nodemon.
@@ -112,26 +112,7 @@ Inicia sesión con correo y contraseña.
 
 ## 🔐 Protección con JWT
 
-Puedes proteger rutas privadas usando un middleware como este:
-
-```js
-const jwt = require("jsonwebtoken");
-
-const verifyToken = (req, res, next) => {
-  const token = req.headers["authorization"];
-
-  if (!token)
-    return res.status(403).json({ message: "Token no proporcionado" });
-
-  try {
-    const decoded = jwt.verify(token.split(" ")[1], process.env.JWT_SECRET);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    return res.status(401).json({ message: "Token inválido" });
-  }
-};
-```
+- Cuenta con proteccipon con Json Web Token
 
 ---
 
@@ -140,14 +121,6 @@ const verifyToken = (req, res, next) => {
 - Asegúrate de tener tu base de datos y tablas creadas antes de probar el backend.
 - No subas tu `.env` ni tokens al repositorio público.
 - JWT tiene un tiempo de expiración de 1 hora (puedes configurarlo).
-
----
-
-## 👨‍💻 Autor
-
-**Sebastián Cervantes**  
-Yucatán, México  
-Desarrollador de Software
 
 ---
 
