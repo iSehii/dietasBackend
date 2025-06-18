@@ -1,6 +1,15 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { Roles } = require('../models/rolesModel')
 const { Usuario } = require('../models/usuarioModel');
+const { Estados } = require('../models/estadoModel');
+const { Viaticos } = require('../models/viaticoModel');
+const { ViaticosDias } = require('../models/viaticosDiasModel');
+const { Proyecto } = require('../models/proyectoModel');
+const { TipoGasto } = require('../models/tipoGastoModel');
+const { Solicitud } = require('../models/solicitudModel');
+const { GastoViaje } = require('../models/gastoViajeModel');
+
 require("dotenv").config();
 
 exports.register = async (req, res) => {

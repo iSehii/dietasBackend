@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const { databaseMySQL } = require('../config/database');
 
-const Rol = databaseMySQL.define('Rol', {
+const Roles = databaseMySQL.define('Roles', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,   
@@ -17,4 +17,4 @@ const Rol = databaseMySQL.define('Rol', {
   timestamps: true
 });
 
-module.exports = { Rol };
+module.exports = { Roles };
