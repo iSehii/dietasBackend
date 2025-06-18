@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const { databaseMySQL } = require('../config/database');
 
 const Viatico = databaseMySQL.define('Viatico', {
-  id_viatico: {
+  id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
